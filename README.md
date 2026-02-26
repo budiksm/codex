@@ -5,6 +5,7 @@ Web sederhana dengan nuansa macOS modern: ada card seperti window, tombol intera
 ## Fitur
 
 - Next.js 14 + App Router, siap deploy ke Vercel.
+- Konfigurasi Next.js menggunakan `next.config.mjs` agar kompatibel dengan proses build Vercel.
 - Tampilan minimalis Apple-like (system font, shadow halus, rounded corners).
 - Tombol **Males** berpindah random saat hover/touch dan tetap di dalam area window.
 - Tombol **Ayo** membesar bertahap saat tombol **Males** berpindah.
