@@ -1,0 +1,200 @@
+:root {
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.page-wrap {
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  padding: 1.25rem;
+  background: linear-gradient(160deg, #f6f8fc 0%, #edf1f7 45%, #e8eef8 100%);
+}
+
+.mac-window {
+  width: min(94vw, 620px);
+  border-radius: 22px;
+  overflow: hidden;
+  background: #ffffffee;
+  box-shadow: 0 20px 45px rgba(46, 58, 89, 0.15), 0 4px 12px rgba(46, 58, 89, 0.09);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  opacity: 0;
+  transform: translateY(14px) scale(0.96);
+  transition: opacity 450ms ease, transform 450ms ease;
+}
+
+.mac-window.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.title-bar {
+  height: 52px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  padding: 0 1rem;
+  background: linear-gradient(180deg, #f9f9fb 0%, #eef1f6 100%);
+  border-bottom: 1px solid rgba(88, 99, 127, 0.12);
+}
+
+.title-bar p {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  color: #283246;
+}
+
+.traffic-lights {
+  display: flex;
+  gap: 0.45rem;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  box-shadow: inset 0 -1px 1px rgba(0, 0, 0, 0.22);
+}
+
+.dot.red {
+  background: #ff5f57;
+}
+
+.dot.yellow {
+  background: #febc2e;
+}
+
+.dot.green {
+  background: #28c840;
+}
+
+.content {
+  padding: 2rem 1.5rem 1.7rem;
+  text-align: center;
+}
+
+.content h1 {
+  margin: 0;
+  font-size: clamp(1.9rem, 4vw, 2.4rem);
+  line-height: 1.15;
+  color: #1e2738;
+}
+
+.content > p {
+  margin: 0.8rem auto 0;
+  color: #596378;
+  max-width: 32ch;
+}
+
+.buttons-zone {
+  position: relative;
+  margin: 2rem auto 0;
+  height: 240px;
+  border-radius: 14px;
+  border: 1px dashed #d8deea;
+  background: #f9fbff;
+  overflow: hidden;
+}
+
+.btn {
+  border: 0;
+  border-radius: 999px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #0f1828;
+  width: 104px;
+  height: 44px;
+  cursor: pointer;
+  transition: transform 260ms ease, background-color 260ms ease, box-shadow 260ms ease;
+  box-shadow: 0 8px 16px rgba(17, 26, 46, 0.14);
+}
+
+.btn.ayo {
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  background: hsl(160 78% 46%);
+  transform-origin: left top;
+}
+
+.btn.males {
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  background: #eef2fb;
+}
+
+.accepted-state {
+  margin-top: 1.5rem;
+  position: relative;
+  min-height: 240px;
+  display: grid;
+  place-items: center;
+  gap: 0.8rem;
+}
+
+.accepted-state img {
+  border-radius: 14px;
+  max-width: min(100%, 240px);
+  height: auto;
+  box-shadow: 0 12px 24px rgba(17, 26, 46, 0.16);
+}
+
+.accepted-text {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #243149;
+}
+
+.confetti-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.confetti {
+  position: absolute;
+  top: -10%;
+  width: 8px;
+  height: 14px;
+  border-radius: 2px;
+  opacity: 0.86;
+  background: linear-gradient(180deg, #ff7eb3, #7afcff);
+  animation-name: fall;
+  animation-timing-function: ease-in;
+  animation-iteration-count: infinite;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  100% {
+    transform: translateY(290px) rotate(320deg);
+  }
+}
+
+@media (max-width: 520px) {
+  .content {
+    padding: 1.5rem 1rem;
+  }
+
+  .buttons-zone {
+    height: 220px;
+  }
+}
